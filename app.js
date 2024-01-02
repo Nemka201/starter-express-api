@@ -13,7 +13,7 @@ var corsOptions = {
   optionsSuccessStatus: 200
 }
 var corsOptions2 = {
-  origin: 'https://paveco-2023.web.app/',
+  origin: 'https://paveco-2023.web.app',
   optionsSuccessStatus: 200
 }
 
