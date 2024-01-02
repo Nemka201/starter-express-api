@@ -2,9 +2,9 @@
   "name": "starter-express-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +17,18 @@
   },
   "homepage": "https://github.com/cyclic-software/starter-express-api#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "bcrypt": "^5.1.0",
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "express": "^4.18.2",
+    "http-errors": "~1.6.3",
+    "jade": "^1.9.2",
+    "morgan": "~1.9.1",
+    "mysql2": "^3.4.0",
+    "resend": "^2.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
   }
 }
