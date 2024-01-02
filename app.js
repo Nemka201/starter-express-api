@@ -12,6 +12,10 @@ var corsOptions = {
   origin: 'https://paveco.com.ar',
   optionsSuccessStatus: 200
 }
+var corsOptions2 = {
+  origin: 'https://paveco-2023.web.app/',
+  optionsSuccessStatus: 200
+}
 
 app.listen(port, () => {
   console.log(`Servidor Express iniciado en el puerto ${port}`);
@@ -19,8 +23,8 @@ app.listen(port, () => {
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-app.use(cors());
 app.use(cors(corsOptions));
+app.use(cors(corsOptions2));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
