@@ -5,9 +5,13 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const indexRouter = require('./routes/index.js');
 const resendRouter = require('./routes/resend.js');
+const userRouter = require('./routes/users');
+const newsRouter = require('./routes/news');
 const port = 3030;
 const app = express();
+const env = require('dotenv').config();
 const cors = require('cors');
+
 var corsOptions = {
   origin: 'https://paveco.com.ar',
   optionsSuccessStatus: 200
@@ -23,8 +27,9 @@ app.listen(port, () => {
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-// app.use(cors(corsOptions));
 app.use(cors(corsOptions2));
+// app.use(cors(corsOptions));
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -33,7 +38,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/resend', resendRouter);
-
+app.use('/users', userRouter);
+app.use('/news', newsRouter); 
 
 app.use(function(req, res, next) {
   next(createError(404));
