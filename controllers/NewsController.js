@@ -112,8 +112,6 @@ const updateNews = async (req, res) => {
     }
 };
 
-router.post('/', createNews);
-router.get('/', getAllNews);
-router.get('/', getLatestNews);
-
-module.exports = router;
+module.exports = {
+    createNews, deleteNews, updateNews, getAllNews, getLatestNews
+};
